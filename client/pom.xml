@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.brayan</groupId>
+    <artifactId>client</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>client</name>
+    <description>client</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+    <groupId>io.sentry</groupId>
+    <artifactId>sentry-spring-boot-jakarta</artifactId>
+    <version>7.8.0</version>
+</dependency>
+<dependency>
+    <groupId>io.sentry</groupId>
+    <artifactId>sentry-logback</artifactId>
+    <version>7.8.0</version>
+</dependency>
+
+    
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-maven-plugin</artifactId>
+            <version>0.0.8</version>
+            <extensions>true</extensions>
+            <configuration>
+                <!-- para mostrar la salida del sentry-cli -->
+                <debugSentryCli>true</debugSentryCli>
+
+                <!-- Organización en Sentry -->
+                <org>politecnico-grancolombiano-1r</org>
+
+                <!-- Proyecto en Sentry -->
+                <project>java-spring-boot</project>
+
+                <authToken>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</authToken>
+
+
+                <!-- URL opcional si estás usando un Sentry auto-alojado -->
+                <!-- <url>http://localhost:8000/</url> -->
+
+                <!-- Token de autenticación -->
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <!-- Sube el bundle de código fuente a Sentry -->
+                        <goal>uploadSourceBundle</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
+
+</project>
