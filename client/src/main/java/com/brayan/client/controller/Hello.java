@@ -28,19 +28,6 @@ public class Hello {
         return ResponseEntity.ok("Message sent! Response: " + response.getBody());
     }
 
-    @GetMapping("/error")
-    public ResponseEntity<String> Message(){
-        
-        try {
-            // Generar un error intencional
-            throw new RuntimeException("¡Error intencional para probar Sentry!");
-        } catch (Exception e) {
-            // Capturar y reportar el error a Sentry
-            Sentry.captureException(e);
-            return ResponseEntity.status(500).body("Error capturado y enviado a Sentry");
-        }
-
-    }
 
 
 
