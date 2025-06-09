@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Hello {
     @PostMapping("/receive")
     public ResponseEntity<String> receiveMessage(@RequestBody String message) {
-        System.out.println("Received message: " + message);
+        System.out.println("Received message:" + message);
         return ResponseEntity.ok("Message received: " + message);
     }
 }
