@@ -24,7 +24,7 @@ public class Hello {
     public ResponseEntity<String> sendMessage(@RequestBody String message) {
         String url = "http://clienttwo:8081/receiver/receive"; // Nombre del servicio en Docker Compose
         ResponseEntity<String> response = restTemplate.postForEntity(url, message, String.class);
-        return ResponseEntity.ok("Message sent! Response: " + response.getBody());
+        return ResponseEntity.ok("Message enviado! Response: " + response.getBody());
     }
 
 
