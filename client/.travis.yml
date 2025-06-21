@@ -28,8 +28,8 @@ install:
   # Construye los JARs de tus aplicaciones Spring Boot con Maven
   # Usa -DskipTests para construir solo los JARs sin ejecutar los tests de unidad en esta fase,
   # ya que los tests se ejecutarán dentro de los contenedores Docker en la fase 'script'.
-   - cd client && mvn clean install -DskipTests=true && cd ..
-   - cd clientTwo && mvn clean install -DskipTests=true && cd ..
+  - cd client && mvn clean install -DskipTests=true && cd ..
+  - cd clientTwo && mvn clean install -DskipTests=true && cd ..
 
 script:
   # Construye las imágenes Docker y levanta los servicios con Docker Compose
