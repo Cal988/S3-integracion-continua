@@ -55,7 +55,6 @@ script:
   # o a localhost con los puertos mapeados si los quieres testear desde afuera.
   # Otra forma es crear un módulo de tests de integración separado que se ejecute después del docker-compose up
   # - mvn test # Si tienes tests de integración que dependan de los servicios levantados
-
 after_script:
   - docker-compose down # Baja los servicios Docker después de la ejecución
 
