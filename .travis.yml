@@ -1,5 +1,4 @@
 # .travis.yml
-
 language: java
 jdk:
   - openjdk17 # Especifica el JDK 17, que es el que usa tu proyecto
